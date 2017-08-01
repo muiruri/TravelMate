@@ -48,3 +48,25 @@ form {
 .menu-div {
     margin-right: 10px;
 }
+
+.map {
+    width: 100%;
+
+}
+
+.direction-search {
+    padding: 5px 0px;
+}
+
+img {
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.news-item {
+    padding: 5px 0px;
+}

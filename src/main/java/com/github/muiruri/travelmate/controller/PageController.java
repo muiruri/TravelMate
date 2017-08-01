@@ -24,4 +24,9 @@ public class PageController {
     public String directions() {
         return "directions";
     }
+
+    @RequestMapping("news")
+    public String news() {
+        return "news";
+    }
 }

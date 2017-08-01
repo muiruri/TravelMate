@@ -13,6 +13,6 @@
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li><a href="index">Exchange Rates</a></li>
         <li><a href="directions">Directions</a></li>
-
+        <li><a href="news">News</a></li>
     </ul>
 </div>

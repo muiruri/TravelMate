@@ -4,11 +4,13 @@
 
 var app = app || {};
 app.initMap = function() {
+    $(function () {
     if(page == "directions") {
-
+        $("#map").css("height", app.getHeight() - 50);
         var mapView = new app.views.MapView()
         mapView.render()
     }
+    });
 }
 
 $(function () {
@@ -89,9 +91,11 @@ $(function () {
             var exchangeModel = new app.models.ExchangeModel();
             var exchangeView = new app.views.ExchangeView({ el : document.getElementById("exchange-view"), collection: exchangeCollection, model : exchangeModel });
             exchangeView.render();
-        } else if(page == "directions") {
-            var mapView = new app.views.MapView()
-            mapView.render()
+        } else if(page == "news") {
+            var sourceCollection = new app.collections.SourcesCollection();
+            var sourceView = new app.views.SourcesView({ el : document.getElementById("sources-view"), collection: sourceCollection });
+            sourceView.render();
+            sourceCollection.fetch()
         }
     }
 
@@ -134,5 +138,7 @@ closeNotify = function(successMessage, syncId, type) {
 }
 
 initMap = function() {
-    app.initMap();
+    $(function () {
+        app.initMap();
+    });
 }
