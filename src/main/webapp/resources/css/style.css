@@ -1,0 +1,50 @@
+html { overflow-y: scroll; height:100%;}
+body {
+    font-size: 12px;
+    font-family: Verdana,Arial,sans-serif;
+    height:100%;
+    width: 100%;
+}
+
+.page-header {
+    height: 50px;
+    margin: 20px 0 10px;
+}
+
+.menu-div {
+    margin: 0px 10px;
+}
+
+form {
+    margin-bottom: 1em;
+}
+
+.modal-dialog {
+    width: 700px;
+}
+
+.thumbnail {
+    width: 300px;
+    height: 250px;
+    margin-left: 10px;
+}
+
+#imageList {
+    margin-left: 20px;
+}
+
+.login {
+    margin-top : 10%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid #d4d4d4;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.login form {
+    padding: 20px;
+}
+
+.menu-div {
+    margin-right: 10px;
+}

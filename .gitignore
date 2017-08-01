@@ -1,0 +1,88 @@
+# Copied from https://github.com/github/gitignore
+
+### IntelliJ Idea ###
+*.iml
+*.ipr
+*.iws
+.idea/
+
+### Maven ###
+target/
+#############
+
+### Eclipse ###
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+###############
+
+### Java ###
+*.class
+
+# Java Package Files #
+*.jar
+*.war
+*.ear
+############
+
+### Netbeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+################
+
+### Linux ###
+.*
+!.gitignore
+!.gitattributes
+!.travis.yml
+!.bowerrc
+*~
+#############
+
+### Log files ###
+*.log
+
+#### sh ###
+*.sh
+
+
+coffee/node_modules
+### Ignore js libraries downloaded by bower no need to keep them in repo ###
+src/main/webapp/js/vendor
+
+node_modules/
+
+### Ignore generated files ###
+src/main/webapp/resources/js/travelmate.min.js
+src/main/webapp/resources/js/travelmate.js
+src/main/webapp/resources/vendor/
+
+# Ignore the sphinx manual build directory
