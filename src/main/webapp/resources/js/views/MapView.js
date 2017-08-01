@@ -5,11 +5,10 @@ var MapView = Backbone.View.extend({
     "click .findDirection" : "drawRoute"
   },
   initialize: function() {
-    this.listenTo(this.model, "change:pickAddress change:dropAddress", this.drawRoute);
+
   },
 
   render: function() {
-    //this.$el.html(this.template());
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 0, lng: 0},
       zoom: 8
@@ -45,30 +44,6 @@ var MapView = Backbone.View.extend({
       enableEventPropagation: false
     };
     this.initPlacesSearch();
-  },
-
-  removeMarker: function() {
-    this.marker.setMap(null);
-  },
-
-  selectLocation: function(evt) {
-
-  },
-
-  showSourceDestination: function() {
-    this.sourceDestinationView = new app.views.SourceDestinationView({ mapView : this });
-    this.geoCode();
-    this.$("#map-overlay").html(this.sourceDestinationView.render().el);
-  },
-
-  geoCode: function() {
-    var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + this.map.getCenter().lat() + "," + this.map.getCenter().lng() + "&key=AIzaSyAP_8poecyZZHV9AQEzZPGPwFulBQXXRHY";
-    mapview = this;
-    $.ajax({
-      url: url
-    }).done(function(data) {
-      mapview.sourceDestinationView.setSource(data.results[0]);
-    })
   },
 
   initPlacesSearch: function() {

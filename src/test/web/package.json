@@ -1,0 +1,20 @@
+{
+  "name": "TravelMate",
+  "version": "1.0.0",
+  "description": "A sample app",
+  "author": "John Muiruri",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "chai-webdriver": "^1.2.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^1.2.0",
+    "grunt-mocha-phantomjs": "^3.0.0",
+    "mocha": "^2.5.3",
+    "mocha-phantomjs": "^4.1.0",
+    "phantomjs": "^2.1.7",
+    "selenium-webdriver": "^2.53.3",
+    "sinon": "^1.17.5",
+    "sinon-chai": "^2.8.0"
+  }
+}

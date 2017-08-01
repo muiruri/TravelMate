@@ -26,11 +26,6 @@ SourcesView = Backbone.View.extend({
         return this;
     },
 
-    dateChanged: function(evt) {
-        var date = this.$("#rateDate").val();
-        this.model.fetch({date : date });
-    },
-
     loadData: function(models) {
         var i = 1;
         var newList = this.collection.map(function(model) {

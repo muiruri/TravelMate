@@ -18,11 +18,6 @@ NewsView = Backbone.View.extend({
         return this;
     },
 
-    dateChanged: function(evt) {
-        var date = this.$("#rateDate").val();
-        this.model.fetch({date : date });
-    },
-
     loadData: function(models) {
 
         this.collection.each(function(model) {

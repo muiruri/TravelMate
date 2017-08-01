@@ -79,6 +79,7 @@ coffee/node_modules
 src/main/webapp/js/vendor
 
 node_modules/
+src/test/web/node_modules/
 
 ### Ignore generated files ###
 src/main/webapp/resources/js/travelmate.min.js

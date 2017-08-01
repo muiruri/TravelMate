@@ -1,0 +1,137 @@
+<html>
+<meta charset="utf-8">
+    <head>
+    <title>Front end tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+    </head>
+    <body>
+    <div id="mocha"></div>
+
+    <!-- Test Fixtures. -->
+    <div id="fixtures" style="display: none; visibility: hidden;">
+        <div class="container" id="exchange-view">
+            <div class="form-group col-md-3">
+                <label for="rateDate">Select Date</label>
+                <input type="text" class="form-control datepicker input-sm" id="rateDate" placeholder="date"/>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th data-field="count">#</th>
+                    <th data-field="code"><spring:message code="general.currencyCode" /></th>
+                    <th data-field="rate"><spring:message code="general.rate" /></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="container" id="sources-view">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th data-field="name"><spring:message code="general.name" /></th>
+                    <th data-field="description"><spring:message code="general.description" /></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="container hide" id="news-view">
+
+
+        </div>
+
+        <script type="text/template" id="news-header-template">
+            <div>
+
+                <h3 class="news-source">
+                    <small>
+                        <a aria-label="Left Align" class="back pointer">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back to sources
+                        </a>
+                    </small>
+                    {{ source }}
+                </h3>
+            </div>
+        </script>
+        <script type="text/template" id="new-item-template">
+            <div class="row news-item">
+                <div class="col-md-3">
+                    <img src="{{ imageURL }}"/>
+                </div>
+                <div class="col-md-9">
+                    <label>{{ title }}</label>
+                    <p>{{ description }}</p>
+                </div>
+                <div class="col-md-12">
+                    <label class="text-muted">Author {{ author }} Published at {{ publishedAt }}</label>
+                </div>
+            </div>
+
+        </script>
+
+
+        <div class="container" id="map-view">
+            <div class="row direction-search">
+                <div class="col-md-4 ">
+                    <input class="form-control input input-sm" id="from" type="text" placeholder="From"/>
+                </div>
+                <div class="col-md-4 ">
+                    <input class="form-control input input-sm" id="to" type="text" placeholder="To"/>
+                </div>
+                <div class="col-md-4 ">
+                    <button class="btn btn-primary btn-sm findDirection">Get Directions</button>
+                </div>
+            </div>
+            <div id="map" class="map">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Test Libraries. -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+
+    <!-- JavaScript Core Libraries -->
+    <script src="../../../main/webapp/resources/vendor/underscore/underscore-min.js"></script>
+    <script src="../../../main/webapp/resources/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../../../main/webapp/resources/vendor/backbone/backbone-min.js"></script>
+    <script src="../../../main/webapp/resources/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../../main/webapp/resources/vendor/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="../../../main/webapp/resources/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../../main/webapp/resources/vendor/moment/moment.js"></script>
+    <script src="../../../main/webapp/resources/vendor/notifyjs/dist/notify.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP_8poecyZZHV9AQEzZPGPwFulBQXXRHY&libraries=places"
+    ></script>
+
+    <!-- JavaScript Application Libraries -->
+    <script src="../../../main/webapp/resources/js/travelmate.js"></script>
+    <script src="../js/app.js"></script>
+
+
+    <!-- Set up Mocha and Chai -->
+    <script>
+        var expect = chai.expect;
+        if (typeof initMochaPhantomJS === 'function') {
+            initMochaPhantomJS()
+        }
+        mocha.setup({
+            ui: "bdd",
+            bail: false
+        });
+        window.onload = function () {
+            (window.mochaPhantomJS || mocha).run();
+        };
+    </script>
+
+    <!-- Include our specs. -->
+    <script src="../js/index.spec.js"></script>
+
+    </body>
+</html>
