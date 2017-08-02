@@ -65,8 +65,7 @@ $(function () {
         return "";
     }
 
-    app.init = function() {
-
+    app.initialize = function() {
         $('body').on("keydown", ".number", function(event) {
             var code = (event.keyCode ? event.keyCode : event.which);
             if (!(
@@ -83,9 +82,6 @@ $(function () {
                 event.preventDefault();
         });
 
-    }
-
-    app.initialize = function() {
         if(page == "index") {
             var exchangeCollection = new app.collections.ExchangeCollection();
             var exchangeModel = new app.models.ExchangeModel();
@@ -135,10 +131,4 @@ closeNotify = function(successMessage, syncId, type) {
     }
 
     setTimeout(close, 3000)
-}
-
-initMap = function() {
-    $(function () {
-        app.initMap();
-    });
 }

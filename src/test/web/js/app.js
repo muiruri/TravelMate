@@ -10,8 +10,7 @@ $(function () {
         escape: /\{\{\-(.+?)\}\}/gim
     };
     $.notify.defaults({ autoHide: false});
-
-    app.path = "http://localhost:8080/PublisherSubscriber/"
+    
 
     app.closeNotify = function(successMessage, syncId, type) {
         $(".notifyjs-bootstrap-base." + syncId).
