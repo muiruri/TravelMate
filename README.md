@@ -27,7 +27,7 @@ The application is composed of 2 collections
 * Source Collections - This is a list of various news sources
 * News Collections - This is a list of articles from a source.
 
-Models
+**Models**
 These represent the various objects that are needed by the application.
 
 There are 3 models
@@ -54,7 +54,7 @@ This represents a news article and has the following attributes
 * urlToImage - A url to an image of the article
 * publishedAt - The date and time when the article was published.
 
-Views
+**Views**
 
 This are the elements that are displayed on the screen. The application has the following views
 
@@ -91,6 +91,22 @@ News View
 
 This view is used to display a list of articles from a source. The view displays the article image, title, description,
 author and published date.
+
+**Sync**
+
+This component is responsible for invoking the APIs and loading data
+
+Exchange Sync
+
+This is used to invoke the exchange rates API
+
+Sources Sync
+
+This is used to load the news sources from the News API
+
+News Sync
+
+This is used to load the articles for a Source from the News API
 
 **Back end**
 
@@ -169,6 +185,7 @@ The application can then be accessed from
  Please note the second command should be run just once, on a fresh installation
 
 **Back end tests**
+
 To run the back end tests, run the command
 
 	mvn test
