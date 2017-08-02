@@ -5,6 +5,7 @@
 NewsView = Backbone.View.extend({
     events: {
         "click .back" : "goBack",
+        "click .news-item" : "openNews"
     },
 
     initialize: function(options) {
@@ -23,10 +24,16 @@ NewsView = Backbone.View.extend({
         this.collection.each(function(model) {
             var template = _.template($('#new-item-template').html());
             this.$el.append(template({ imageURL : model.get("urlToImage"), title : model.get("title"),
-                description : model.get("description"), author : model.get("author"), publishedAt: model.get("publishedAt")
+                description : model.get("description"), author : model.get("author"), publishedAt: model.get("publishedAt"),
+                url : model.get("url")
             }))
         }, this);
 
+    },
+
+    openNews: function(evt) {
+        var url = $(evt.target).attr("url");
+        window.open(url, "_blank")
     },
 
     goBack: function(evt) {

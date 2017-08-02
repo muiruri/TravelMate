@@ -26,7 +26,9 @@ ExchangeView = Backbone.View.extend({
 
     dateChanged: function(evt) {
         var date = this.$("#rateDate").val();
-        this.model.fetch({date : date });
+        if(date != "") {
+            this.model.fetch({date: date});
+        }
     },
 
     loadRates: function(model) {

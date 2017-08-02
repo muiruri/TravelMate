@@ -53,7 +53,7 @@
     </div>
 </script>
 <script type="text/template" id="new-item-template">
-    <div class="row news-item">
+    <div class="row news-item pointer" url="{{ url }}">
         <div class="col-md-3">
             <img src="{{ imageURL }}"/>
         </div>
