@@ -1,4 +1,4 @@
-TravelMate
+**TravelMate**
 
 This is a web application for travellers which provides the following
 functionalities in one place
@@ -92,8 +92,12 @@ News View
 This view is used to display a list of articles from a source. The view displays the article image, title, description,
 author and published date.
 
+**Back end**
 
-Design considerations
+The backend consists of Spring MVC and has one controller for serving the application pages.
+
+**Design considerations**
+
 * Scalability - The application could be deployed in multiple servers behind load balancers which distribute
 the requests to various servers. This will ensure that the application will be able to handle 1M+ requests.
 
@@ -103,7 +107,7 @@ the requests to various servers. This will ensure that the application will be a
 * Caching - Some of the data is cached on the browser and reused to avoid reloading of data everytime.
 
 
-Tests
+**Tests**
 
 The application includes unit tests for the various components. These tests verify that the components will function as they should.
 
