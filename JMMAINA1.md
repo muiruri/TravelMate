@@ -1,7 +1,10 @@
 **TravelMate**
 
 This is a web application for travellers which provides the following
-functionalities in one place
+functionalities in one place.
+
+The application can be accessed online from AWS on http://52.88.125.120:8080/TravelMate/
+on both desktop and mobile devices.
 
 * Current exchange rates
 * Map Directions
