@@ -168,3 +168,8 @@ The application can then be accessed from
 
  Please note the second command should be run just once, on a fresh installation
 
+**Back end tests**
+To run the back end tests, run the command
+
+	mvn test
+
