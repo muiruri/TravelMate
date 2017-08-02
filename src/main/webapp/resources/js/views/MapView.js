@@ -11,12 +11,13 @@ var MapView = Backbone.View.extend({
   render: function() {
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 0, lng: 0},
-      zoom: 8
+      zoom: 2
     });
 
     var map = this.map
     setPosition = function(position) {
       map.setCenter({lat: position.coords.latitude, lng: position.coords.longitude})
+      map.setZoom(8)
     }
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setPosition);
