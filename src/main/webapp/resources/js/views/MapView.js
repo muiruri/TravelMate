@@ -8,6 +8,9 @@ var MapView = Backbone.View.extend({
 
   },
 
+  /**
+   *  Renders the view
+   */
   render: function() {
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 0, lng: 0},
@@ -47,6 +50,9 @@ var MapView = Backbone.View.extend({
     this.initPlacesSearch();
   },
 
+  /**
+   *  Initializes the search input fields
+   */
   initPlacesSearch: function() {
     var autocomplete = new google.maps.places.Autocomplete(document.getElementById("from"));
     autocomplete.addListener("place_changed", function() {
@@ -64,7 +70,9 @@ var MapView = Backbone.View.extend({
     }.bind(this));
   },
 
-
+  /**
+   *  Draws the route on the map
+   */
   drawRoute: function() {
     if(this.startLatLng == null || this.endLatLng == null) {
       return;
@@ -85,6 +93,9 @@ var MapView = Backbone.View.extend({
     }).bind(this));
   },
 
+  /**
+   * Removes the path from the map.
+   */
   removePath: function() {
     this.directionsDisplay.setMap(null);
   }

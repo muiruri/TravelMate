@@ -12,6 +12,11 @@ ExchangeView = Backbone.View.extend({
     initialize: function(options) {
         this.model.on("change", this.loadRates.bind(this));
     },
+
+    /**
+     *  Renders the view
+     * @returns {ExchangeView}
+     */
     render: function() {
         this.$(".table").bootstrapTable({
             data : [], striped: true, idField: "id", pagination: true,  height: app.getHeight(), toolbar : '#toolbar', search : true
@@ -24,6 +29,10 @@ ExchangeView = Backbone.View.extend({
         return this;
     },
 
+    /**
+     *  Triggered when the date is changed
+     * @param evt
+     */
     dateChanged: function(evt) {
         var date = this.$("#rateDate").val();
         if(date != "") {
@@ -31,6 +40,10 @@ ExchangeView = Backbone.View.extend({
         }
     },
 
+    /**
+     *  Loads the rates when the model is updated.
+     * @param model
+     */
     loadRates: function(model) {
         var i = 1;
         var rates = this.model.get("rates");

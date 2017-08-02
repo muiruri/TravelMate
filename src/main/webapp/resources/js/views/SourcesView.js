@@ -9,11 +9,26 @@ SourcesView = Backbone.View.extend({
     initialize: function(options) {
         this.collection.on("add", this.loadData.bind(this));
     },
+    /**
+     *  Renders the view
+     * @returns {SourcesView}
+     */
     render: function() {
         this.$(".table").bootstrapTable({
             data : [], striped: true, idField: "id", pagination: true,  height: app.getHeight(), toolbar : '#toolbar', search : true
         });
-        this.$('.table').on('dbl-click-row.bs.table', (function (event, row, element) {
+        /*this.$('.table').on('dbl-click-row.bs.table', (function (event, row, element) {
+            var id = row.id;
+            var model = this.collection.get(id);
+
+            var newsCollection = new app.collections.NewsCollection();
+            var newsView = new app.views.NewsView({ el : document.getElementById("news-view"), collection : newsCollection, model : model });
+            newsCollection.fetch({ source : model.get("id") });
+            this.$el.addClass("hide");
+            newsView.render();
+        }).bind(this));*/
+
+        this.$('.table').on('click-row.bs.table', (function (event, row, element) {
             var id = row.id;
             var model = this.collection.get(id);
 
@@ -26,6 +41,10 @@ SourcesView = Backbone.View.extend({
         return this;
     },
 
+    /**
+     *  Loads the data to the view when the collection is updated or data is fetched
+     * @param models
+     */
     loadData: function(models) {
         var i = 1;
         var newList = this.collection.map(function(model) {
